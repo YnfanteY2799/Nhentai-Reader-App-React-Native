@@ -13,8 +13,10 @@ const bookmark_icon = require("../../assets/icons/bookmark_icon.png");
 const read_icon = require("../../assets/icons/read_icon.png");
 const back_arrow_icon = require("../../assets/icons/back_arrow_icon.png");
 const more_icon = require("../../assets/icons/more_icon.png");
+const loading_gif = require("../../assets/loading-azurlane.gif");
 
 export {
+
     card_icon,
     claim_icon,
     dashboard_icon,
@@ -30,4 +32,6 @@ export {
     read_icon,
     back_arrow_icon,
     more_icon,
+    loading_gif,
+
 };

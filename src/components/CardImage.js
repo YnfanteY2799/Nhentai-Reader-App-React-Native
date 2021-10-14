@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, Text, Image, StyleSheet } from 'react-native';
+import { TouchableOpacity, Image, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const style = StyleSheet.create({
@@ -21,7 +21,7 @@ const CardImage = ({uri = "", code = "000000"}) => {
     let navi = useNavigation();
 
     return (
-        <TouchableOpacity onPress={() =>{ navi.navigate('Deatils', { code } ) }}>
+        <TouchableOpacity onPress={() =>{ navi.navigate('Deatils', { code, uri } ) }}>
             <Image style={style.CardImage} source={{uri:uri}}/>
         </TouchableOpacity>
     )

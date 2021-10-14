@@ -3,7 +3,7 @@ import Home from '../Home';
 import Configuration from '../Configuration';
 import Search from "../Search.js";
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import { dashboard_icon, search_icon, notification_icon, menu_icon } from "../../constants/icons.js";
+import { dashboard_icon, search_icon, menu_icon } from "../../constants/icons.js";
 import { COLORS } from '../../constants/theme.js';
 import { Image } from 'react-native'; 
 
@@ -45,4 +45,4 @@ const Tabs = () =>
     <Tab.Screen name="Configuracion" component={Configuration}/>
 </Tab.Navigator>;
 
-export default Tabs
+export default Tabs;

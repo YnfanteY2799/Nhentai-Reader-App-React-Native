@@ -1,20 +1,25 @@
-import React, { useState, useEffect } from 'react'
-import { ImageList } from '../components/ImageList.js';
-import { Header } from 'react-native-elements/dist/header/Header';
+import React, { useState, useEffect } from 'react';
+import { ImageList, HorizontalImageList } from '../components/ImageList.js';
 import { View, Text, SafeAreaView } from 'react-native';
-import { COLORS } from '../constants/theme.js';
 import { apiLink } from '../constants/api.js';
+
 
 const Home = () => {
 
     const [ popularDoujins, setPopularDoujins ] = useState([]);
     const [ noPopularDoujins, setNoPopularDoujins ] = useState([]);
 
+
+
+
     const getInitialData = () => {
+    
+        // NHentai.getRequest();
+    
         fetch( apiLink("/api/getIndexScreen") ).
-        then(x => x.json()).then(({pop, noPop}) =>{        
-            setPopularDoujins(pop); 
-            setNoPopularDoujins(noPop); 
+        then(x => x.json()).then(({pop, noPop}) =>{
+            setNoPopularDoujins(noPop);
+            setPopularDoujins(pop);
         });
 
     }
@@ -27,22 +32,23 @@ const Home = () => {
 
 
     return (
-        <SafeAreaView style={{backgroundColor:COLORS.black}}>
-            <Header
-                placement="left"
-                leftComponent={{icon:"menu",  iconStyle: { color: '#fff' }}}
-            />
+        <SafeAreaView>
+        
             <View style={{paddingLeft:1}}>
                 <Text>Populares del Momento : </Text>
-                <ImageList data={popularDoujins}/>
+                <HorizontalImageList data={popularDoujins} />
             </View>
+
             <View style={{paddingLeft:1}}>
                 <Text>Recientes : </Text>
-                <ImageList data={noPopularDoujins}/>
+                <ImageList data={noPopularDoujins} />
             </View>
+        
         </SafeAreaView>
-
     );
 }
 
 export default Home;
+
+
+
